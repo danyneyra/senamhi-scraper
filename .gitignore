@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+dist/
+
+# IDEs
+.vscode/
+
+# Project specific
+downloads/
+temp/
+config.local.py
+.env
+
+# Logs
+*.log
+logs/
