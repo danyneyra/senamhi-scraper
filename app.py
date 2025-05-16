@@ -2,7 +2,7 @@ import json
 from models.estacion import Estacion
 from typing import List
 from urllib.parse import urlencode
-from boot import run_playwright
+from utils.boot import run_playwright
 
 def cargar_estaciones(path: str) -> List[Estacion]:
     with open(path, 'r', encoding="utf-8") as archivo:
