@@ -35,7 +35,7 @@ senamhi-scraper/
 
 ```bash
 # 1. Clona este repositorio
-git clone https://github.com/tu_usuario/senamhi-scraper.git
+git clone https://github.com/danyneyra/senamhi-scraper.git
 cd senamhi-scraper
 
 # 2. Crea un entorno virtual
