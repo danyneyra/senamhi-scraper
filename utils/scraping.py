@@ -1,61 +1,63 @@
-import requests
-from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
+import os
 
-# Creando sesión
-session = requests.Session()
+def run_playwright(url: str, name: str):
+    try:
+        with sync_playwright() as p:
+            print("Abriendo explorador...")
+            browser = p.chromium.launch(headless=False)
+            context = browser.new_context()
+            page = context.new_page()
 
-# URL de la página que deseas scrapear
-url = 'https://www.senamhi.gob.pe/mapas/mapa-estaciones-2/map_red_graf.php?cod=101004&estado=AUTOMATICA&tipo_esta=M&cate=EMA&cod_old='
+            # Ir a la página inicial
+            page.goto(url)
 
-# Realizando la solicitud GET
-response = session.get(url)
-# Verificando el estado de la respuesta
-if response.status_code == 200:
-    # Analizando el contenido HTML
-    soup = BeautifulSoup(response.content, 'html.parser')
+            # Dar clic en el Tabla
+            page.click("a#tabl")
 
-    # Capturando código captcha
-    captcha_span = soup.find('span', style='color: red; font-size:xxx-large')
-    if captcha_span:
-        captcha_code = captcha_span.text.strip()
-        print(f'Captcha code: {captcha_code}')
-    else:
-        print('Captcha code not found.')
-    print('Cookies before captcha:', session.cookies.get_dict())
+            # Esperar que se resuelva el reCAPTCHA (automáticamente si invisible)
+            page.wait_for_timeout(1500)  # puede necesitar ajustarse
 
-    # Enviar captcha a servidor para generar cookies
-    
-    url_captcha = 'https://www.senamhi.gob.pe/mapas/mapa-estaciones-2/captcha/config/check.php'
-    data_captcha = {
-        'captchaInput': captcha_code,
-        'captcha': captcha_code,
-        'action': 'validarUsuario'
-    }
-    headers = {
-        'Referer': url,
-    }
-    response_captcha = session.post(url_captcha, data=data_captcha, headers=headers)
-    # Verificando el estado de la respuesta
-    if response_captcha.status_code == 200:
-        print('Captcha sent successfully.')
-    else:
-        print('Failed to send captcha.')
-    print(response_captcha.text)
+            # Extraer captcha visible
+            captcha_text = page.locator("span[style*='font-size:xxx-large']").inner_text()
 
-    print('Cookies after captcha:', session.cookies.get_dict())
+            # Ingresar captcha y enviar
+            page.fill("#captchaInput", captcha_text)
+            page.click("button#entrar")  # id exacto puede variar
 
-    # Seleccionar periodo a descargar
-    filter = '202505'
-    url_csv = f'https://www.senamhi.gob.pe/mapas/mapa-estaciones-2/_dt_est_tp_0s3n@mH1.php?estaciones=101004&t_e=M&CBOFiltro={filter}&estado=AUTOMATICA&cod_old=EMA&cate_esta=&alt=199&export2='
-    
-    response_csv = session.get(url_csv)
-    # Verificando el estado de la respuesta
-    if response_csv.status_code == 200:
-        print('CSV file downloaded successfully.')
-        with open('data.csv', 'wb') as f:
-            f.write(response_csv.content)
-    else:
-        print('Failed to download CSV file.')
+            # Esperar redirección o validación
+            page.wait_for_timeout(1500)
 
+            # Obtener todas las opciones del select
+            options = page.eval_on_selector_all("select#CBOFiltro > option", "els => els.map(e => ({ value: e.value, text: e.textContent }))")
+            
+            # Esperar que el iframe cargue
+            frame = page.frame(name="contenedor")
+            if not frame:
+                print("Error: No se pudo encontrar Frame")
+                exit(1)
 
-    #print(soup.prettify())
+            # Esperar que el botón esté visible dentro del iframe
+            frame.wait_for_selector("#export2", state="visible", timeout=10000)
+
+            # Se seleccionará periodo por periodo y se irá descargando
+            for option in options:
+                # Seleccionar periodo
+                page.select_option("#CBOFiltro", value=option["value"])
+
+                # Esperar un tiempo
+                page.wait_for_timeout(2000)
+
+                # Click para descargar (con manejo de descarga)
+                with page.expect_download() as download_info:
+                    frame.click("#export2")
+
+                # Guardar el archivo descargado
+                download = download_info.value
+                save_path = os.path.join(os.getcwd(), f"download/{name}/{option["text"]}.csv")
+                download.save_as(save_path)
+                print("Archivo descargado en:", save_path)
+
+            browser.close()
+    except KeyboardInterrupt:
+        print("Cerrando app :(")

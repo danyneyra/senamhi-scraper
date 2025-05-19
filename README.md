@@ -1,7 +1,7 @@
 
-# 📡 Scraper de Datos Meteorológicos del SENAMHI - Perú
+# 📡 Scraper de Datos Hidrometeorológicos del SENAMHI - Perú
 
-Este proyecto permite **descargar automáticamente los archivos CSV** de datos meteorológicos históricos del sitio web del **SENAMHI** (Servicio Nacional de Meteorología e Hidrología del Perú) para cualquier estación meteorológica del país. Utiliza `Playwright` para automatizar la descarga de archivos que están protegidos por CAPTCHA.
+Este proyecto permite **descargar automáticamente los archivos CSV** de datos Hidrometeorológicos históricos del sitio web del **SENAMHI** (Servicio Nacional de Meteorología e Hidrología del Perú) para cualquier estación meteorológica del país. Utiliza `Playwright` para automatizar la descarga de archivos que están protegidos por CAPTCHA.
 
 ## 🚀 Características
 
@@ -19,8 +19,11 @@ Este proyecto permite **descargar automáticamente los archivos CSV** de datos m
 ```
 senamhi-scraper/
 ├── app.py
-├── estaciones.json
+├── data
+  ├── estaciones.json
 ├── download/
+├── utils/
+  ├── scraping.py
 ├── requirements.txt
 └── README.md
 ```
@@ -74,10 +77,10 @@ Todos los archivos `.csv` descargados se almacenan organizadamente dentro de la 
 
 ## 🧠 Notas técnicas
 
-- El sitio web del SENAMHI requiere resolver un CAPTCHA para cada descarga mensual de CSV. Por eso se utiliza `Playwright` para automatizar la navegación y descarga.
+- El sitio web del SENAMHI requiere resolver un CAPTCHA para cada descarga mensual de CSV. Por eso se utiliza `Playwright` para automatizar la navegación y descarga. [Senamhi](https://www.senamhi.gob.pe/?p=estaciones)
 - El archivo `estaciones.json` actúa como un catálogo completo de todas las estaciones meteorológicas disponibles en Perú, incluyendo nombre, código y coordenadas.
 
 
 ---
 
-> Proyecto creado con ❤️ para facilitar el acceso a datos meteorológicos históricos del SENAMHI Perú.
+> Proyecto creado con ❤️ para facilitar el acceso a datos hidrometeorológicos históricos del SENAMHI Perú.
