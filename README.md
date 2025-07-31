@@ -37,19 +37,23 @@ senamhi-scraper/
 ## ⚙️ Instalación
 
 ```bash
+# Los pasos debe de realizarlo desde la terminal (ventana de comandos)
+
 # 1. Clona este repositorio
 git clone https://github.com/danyneyra/senamhi-scraper.git
 cd senamhi-scraper
 
 # 2. Crea un entorno virtual
 python -m venv .venv
+
+# 3. Ingresar en el entorno virtual
 source .venv/bin/activate     # En Linux/macOS
 .venv\Scripts\activate        # En Windows
 
-# 3. Instala las dependencias
+# 4. Instala las dependencias
 pip install -r requirements.txt
 
-# 4. Instala los navegadores para Playwright
+# 5. Instala los navegadores para Playwright
 playwright install
 ```
 
