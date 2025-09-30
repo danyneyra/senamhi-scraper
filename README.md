@@ -1,97 +1,295 @@
-# 📡 Scraper de Datos Hidrometeorológicos del SENAMHI - Perú
+# 🌦️ SENAMHI Data Scraper
 
-Este proyecto permite **descargar automáticamente los archivos CSV** de datos Hidrometeorológicos históricos del sitio web del **SENAMHI** (Servicio Nacional de Meteorología e Hidrología del Perú) para cualquier estación meteorológica del país. Utiliza `Playwright` para automatizar la descarga de archivos que están protegidos por CAPTCHA.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Pydantic](https://img.shields.io/badge/Pydantic-v2-green.svg)](https://pydantic.dev/)
+[![Zendriver](https://img.shields.io/badge/Zendriver-Latest-orange.svg)](https://zendriver.dev/)
 
-## 🚀 Características
+> **Automatiza la descarga de datos meteorológicos históricos del SENAMHI con bypass automático de Cloudflare Turnstile**
 
-- Descarga todos los archivos CSV históricos (por mes y año) de una estación específica.
-- Supera el uso de CAPTCHA usando Playwright.
-- Utiliza un archivo `estaciones.json` que contiene:
-  - Códigos de estaciones
-  - Nombres
-  - Coordenadas geográficas
-  - Tipo de estación
-- Guarda todos los archivos descargados en la carpeta `download`.
+Este proyecto permite **descargar datos hidrometeorológicos históricos** en archivos CSV organizados por **Mes, Año o Rangos de años** desde el sitio web oficial del **SENAMHI** (Servicio Nacional de Meteorología e Hidrología del Perú). Utiliza tecnología avanzada con `Zendriver` para superar automáticamente las protecciones de Cloudflare Turnstile.
 
-## 📂 Estructura del proyecto
+## 📚 Tabla de Contenidos
+
+- [✨ Características](#-características)
+- [🎯 Modos de Consulta](#-modos-de-consulta)
+- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+- [🚀 Instalación](#-instalación)
+- [⚡ Uso Rápido](#-uso-rápido)
+- [💡 Ejemplos de Uso](#-ejemplos-de-uso)
+- [🔄 Flujo de Ejecución](#-flujo-de-ejecución)
+- [🛠️ Configuración Avanzada](#️-configuración-avanzada)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [⚠️ Limitaciones](#️-limitaciones)
+- [📄 Licencia](#-licencia)
+
+## ✨ Características
+
+### 🚀 Funcionalidades Principales
+- 🛡️ **Bypass automático de Cloudflare Turnstile** - Acceso garantizado sin intervención manual
+- 🔄 **Tres modos de consulta flexibles** - Month, Year, Period con opciones avanzadas
+- 📊 **Exportación inteligente** - CSV organizados con nombres descriptivos
+- 🎯 **Interfaz interactiva amigable** - Validaciones en tiempo real
+- 📋 **Modelos Pydantic tipados** - Validación automática de datos
+- 🔧 **Configuración centralizada** - Personalización fácil en `settings.py`
+
+
+## 🎯 Modos de Consulta
+
+### 1. Modo Month (Mensual)
+Descarga datos de un mes específico.
+- **Entrada**: Año y mes
+- **Salida**: Un archivo CSV individual
+- **Ejemplo**: `TICAPAMPA-202409.csv`
+
+### 2. Modo Year (Anual)
+Descarga todos los meses de un año completo.
+- **Entrada**: Año
+- **Opciones**: Archivos individuales o consolidado
+- **Salida**: 12 archivos separados o 1 archivo consolidado
+- **Ejemplo**: `TICAPAMPA-2024.csv`
+
+### 3. Modo Period (Periodo)
+Descarga datos de múltiples años.
+- **Entrada**: Año inicial y final
+- **Opciones**: Archivos individuales o consolidado
+- **Salida**: Múltiples archivos o 1 archivo consolidado
+- **Ejemplo**: `TICAPAMPA-2020-2025.csv`
+
+## 📁 Estructura del Proyecto
 
 ```
-senamhi-scraper/
-├── app.py
-├── data
-  ├── estaciones.json
-├── download/
-├── utils/
-  ├── combine.py
-  ├── scraping.py
-├── requirements.txt
-└── README.md
+senamhi_scraper/
+├── 📄 main.py                    # 🚀 Script principal ejecutable
+├── 📄 run_scraper.py            # 🎮 Interfaz interactiva (recomendado)
+├── ⚙️ settings.py               # ✨ Configuración centralizada
+├── 📋 requirements.txt          # 📦 Dependencias del proyecto
+├── 📖 README.md                # 📚 Documentación completa
+├── 📄 STRUCTURE_ANALYSIS.md     # 🔍 Análisis de arquitectura
+│
+├── 📁 src/                      # 🏗️ Código fuente modular
+│   ├── 🚨 exceptions.py        # Excepciones personalizadas
+│   ├── 🎯 query_handler.py     # Manejador principal de consultas
+│   ├── 🌐 html_utils.py        # Utilidades para parsing HTML
+│   ├── 🏭 station_service.py   # Servicio de gestión de estaciones
+│   └── 📁 models/              # 🏛️ Modelos de datos con Pydantic
+│       ├── 📄 __init__.py      
+│       ├── 🏢 station.py       # Modelo Station + validaciones
+│       ├── 🔍 query.py         # Modelos de consultas y respuestas
+│       └── 📊 data_schema.py   # Esquemas CSV y validadores
+│
+├── 📁 data/                     # 💾 Datos del proyecto
+│   └── 🗄️ estaciones.json      # Base de datos de estaciones
+│
+├── 📁 output/                   # 📈 Archivos generados
+│   └── 📊 *.csv                # Datos meteorológicos descargados
+│                               # Estructura: ESTACION-YYYYMM.csv
+│
+└── 📁 .venv/                    # 🐍 Entorno virtual (opcional)
+    └── 📦 [dependencias aisladas]
 ```
 
-## 🧰 Requisitos
+## 🚀 Instalación
 
-- Python 3.8 o superior
-- [Playwright](https://playwright.dev/python/)
-- Navegador Chromium (se instala automáticamente con Playwright)
+### Requisitos
+- **Python 3.8+** (recomendado 3.11+)
+- **zendriver** - Automatización web avanzada
+- **beautifulsoup4** - Parsing HTML
+- **pydantic** - Validación de datos y modelos tipados
 
-## ⚙️ Instalación
 
+### 1. Clonar repositorio
 ```bash
-# Los pasos debe de realizarlo desde la terminal (ventana de comandos)
-
-# 1. Clona este repositorio
 git clone https://github.com/danyneyra/senamhi-scraper.git
 cd senamhi-scraper
+```
 
-# 2. Crea un entorno virtual
+### 2. Crea un entorno virtual
+```bash
 python -m venv .venv
 
 # 3. Ingresar en el entorno virtual
 source .venv/bin/activate     # En Linux/macOS
 .venv\Scripts\activate        # En Windows
-
-# 4. Instala las dependencias
-pip install -r requirements.txt
-
-# 5. Instala los navegadores para Playwright
-playwright install
 ```
 
-## ▶️ Uso
-
-Ejecuta el script principal:
-
+### 3. Instalar librerías desde requirements.txt (Recomendado)
 ```bash
-python app.py
+pip install -r requirements.txt
 ```
 
-Verás el siguiente menú interactivo:
 
-```
-SCRAPING WEB SENAMHI
-=====================================
-1. Descargar datos de una estación y agrupar por año
-2. Descargar datos de una estación
-3. Agrupar datos de una estación por año
-4. Salir
-=====================================
-Seleccione una opción:
+## ⚡ Uso Rápido
+
+### Método 1: Script Interactivo (Recomendado)
+```bash
+python run_scraper.py
 ```
 
-Dependiendo de la opción elegida, se te pedirá ingresar el **código** o el **nombre** de la estación. Puedes obtener estos datos desde el archivo `estaciones.json`.
-
-Por ejemplo, para descargar y agrupar datos de la estación Quiruvilca:
-
-```
-Seleccione una opción: 1
-Ingrese el código de la estación (ejemplo: 4727319A):
+### Método 2: Script Principal
+```bash
+python main.py
 ```
 
-El programa descargará automáticamente todos los archivos CSV disponibles y los organizará por año en la carpeta `download/`.
+## 💡 Ejemplos de Uso
 
-## 📁 Archivos generados
+### Consultar un mes específico
+```
+Modo: 1 (Month)
+Año: 2024
+Mes: 9
+→ Genera: output/TICAPAMPA-202409.csv
+```
 
-Todos los archivos `.csv` descargados se almacenan organizadamente dentro de la carpeta `download/`. Puedes procesarlos posteriormente con herramientas como Excel, pandas, etc.
+### Consultar año completo (archivos separados)
+```
+Modo: 2 (Year)
+Año: 2024
+¿Archivo único?: n
+→ Genera: output/TICAPAMPA-202401.csv, TICAPAMPA-202402.csv, etc.
+```
+
+### Consultar año completo (archivo consolidado)
+```
+Modo: 2 (Year)
+Año: 2024
+¿Archivo único?: s
+→ Genera: output/TICAPAMPA-2024.csv
+```
+
+### Consultar periodo (archivo consolidado)
+```
+Modo: 3 (Period)
+Año inicial: 2020
+Año final: 2025
+¿Archivo único?: s
+→ Genera: output/TICAPAMPA-2020-2025.csv
+```
+
+### 📊 Casos de Uso Comunes
+
+#### 🌡️ Análisis de Tendencias Climáticas
+```bash
+# Descargar últimos 10 años para análisis de tendencias
+Modo: 3 (Period) | Años: 2015-2024 | Consolidado: Sí
+# Resultado: Archivo único con datos históricos completos
+```
+
+#### 📈 Estudios de Variabilidad Estacional
+```bash
+# Descargar año completo en archivos separados
+Modo: 2 (Year) | Año: 2024 | Consolidado: No
+# Resultado: 12 archivos CSV (uno por mes)
+```
+
+#### 🔍 Verificación de Datos Específicos
+```bash
+# Consultar un mes particular para validación
+Modo: 1 (Month) | Año: 2024 | Mes: 09
+# Resultado: Datos específicos de septiembre 2024
+```
+
+## 📋 Formato de Salida
+
+### 📄 Archivos Individuales
+Cada archivo contiene los datos del mes correspondiente:
+- **Formato**: CSV con separador `;`
+- **Encoding**: UTF-8
+- **Nomenclatura**: `CODIGO_ESTACION-YYYYMM.csv`
+- **Ejemplo**: `TICAPAMPA-202409.csv`
+
+### 📦 Archivos Consolidados
+Consolida toda la información en un solo archivo:
+- **Formato**: CSV con separador `;`
+- **Encoding**: UTF-8 
+- **Nomenclatura**: `CODIGO_ESTACION-YYYY.csv` o `CODIGO_ESTACION-YYYY-YYYY.csv`
+- **Contenido**: Datos ordenados cronológicamente
+
+
+## 🔄 Flujo de Ejecución
+
+1. **Inicialización**: Configuración del navegador y parámetros
+2. **Navegación**: Acceso a la página y resolución de Cloudflare
+3. **Configuración**: Clic en pestaña de tabla y localización de iframe
+4. **Extracción**: Obtención de opciones del select
+5. **Filtrado**: Aplicación de criterios según modo de consulta
+6. **Procesamiento**: Iteración sobre opciones filtradas
+7. **Exportación**: Generación de archivos CSV
+8. **Finalización**: Limpieza y cierre del navegador
+
+## Manejo de Errores
+
+El sistema incluye manejo robusto de errores:
+- **Timeouts configurables** para elementos web
+- **Reintentos automáticos** para operaciones fallidas
+- **Validación de datos** antes del procesamiento
+
+## 🔧 Troubleshooting
+
+### Errores Comunes
+
+#### 🚫 "Iframe contenedor no encontrado"
+```bash
+# Soluciones:
+- Verificar conexión a internet estable
+- Revisar si SENAMHI cambió la estructura del sitio
+- Aumentar timeout en settings.py: PAGE_TIMEOUT = 45
+- Verificar que Cloudflare se resolvió correctamente
+```
+
+#### 🚫 "Select CBOFiltro no encontrado" 
+```bash
+# Soluciones:
+- Confirmar que la estación tiene datos disponibles
+- Verificar código de estación en data/estaciones.json
+- Revisar consola del navegador para errores JavaScript
+- Probar con una estación diferente
+```
+
+#### 🚫 "No se encontraron opciones para los criterios"
+```bash
+# Soluciones:
+- Verificar que el año/periodo existe en los datos
+- Consultar años disponibles primero
+- Revisar formato de fecha (YYYYMM)
+- Probar con un rango de fechas más amplio
+```
+
+#### 🚫 Errores de Validación Pydantic
+```bash
+# Ejemplos:
+ValidationError: Latitude must be between -90 and 90
+ValidationError: El código de estación no puede estar vacío
+
+# Solución: Verificar datos de entrada según los modelos
+```
+
+## ⚠️ Limitaciones
+
+- **Dependencia externa**: Sujeto a cambios en el sitio web de SENAMHI
+- **Conexión requerida**: Necesita internet estable durante la operación
+- **Navegador activo**: El navegador debe permanecer abierto durante el scraping
+- **Cloudflare**: Puede requerir verificación adicional ocasionalmente
+- **Rate limiting**: Respetar los límites del servidor de SENAMHI
+
+## 🛠️ Configuración Avanzada
+
+### Personalizar settings.py
+```python
+# Timeouts personalizados
+PAGE_TIMEOUT = 45        # Tiempo de carga de página
+ELEMENT_TIMEOUT = 15     # Tiempo de espera de elementos
+POLL_INTERVAL = 0.3      # Intervalo de polling
+
+# Directorios personalizados
+OUTPUT_DIR = "mi_output"
+CSV_DIR = "mi_output/datos_csv"
+LOGS_DIR = "mi_output/registros"
+
+# CSV personalizado
+CSV_SEPARATOR = ","       # Cambiar a coma si prefieres
+CSV_ENCODING = "utf-8"   # Encoding de archivos
+```
 
 ## 📝 Notas adicionales
 
@@ -118,14 +316,37 @@ Todos los archivos `.csv` descargados se almacenan organizadamente dentro de la 
   - Si tienes problemas con permisos, ejecuta la terminal como administrador.
   - Revisa que tu versión de Python sea 3.8 o superior (`python --version`).
 
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la **Licencia MIT**.
+
+```
+MIT License - Copyright (c) 2024
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software...
+```
+
+## 🌟 Reconocimientos
+
+**⭐ ¿Te resultó útil? ¡Dale una estrella al repo!**
+
+- 🙏 **SENAMHI Perú** - Por proporcionar datos meteorológicos públicos
+- 🚀 **Zendriver** - Por la tecnología de bypass de Cloudflare
+- 💡 **Pydantic** - Por la validación robusta de datos
+- 🐍 **Python Community** - Por las increíbles herramientas disponibles
+
 ---
 
-## 🧠 Notas técnicas
+<div align="center">
+<h3>🌦️ SENAMHI Data Scraper</h3>
+<p><strong>Desarrollado con ❤️ para la comunidad meteorológica y científica peruana</strong></p>
+<p><em>📧 ¿Preguntas? ¿Sugerencias? ¡Abre un issue en GitHub!</em></p>
+<br/>
+<p>🌍 <strong>Facilitando el acceso a datos hidrometeorológicos históricos del SENAMHI</strong></p>
+</div>
 
-- El sitio web del SENAMHI requiere resolver un CAPTCHA para cada descarga mensual de CSV. Por eso se utiliza `Playwright` para automatizar la navegación y descarga. [Senamhi](https://www.senamhi.gob.pe/?p=estaciones)
-- El archivo `estaciones.json` actúa como un catálogo completo de todas las estaciones meteorológicas disponibles en Perú, incluyendo nombre, código y coordenadas.
-
-
----
-
-> Proyecto creado con ❤️ para facilitar el acceso a datos hidrometeorológicos históricos del SENAMHI Perú.
