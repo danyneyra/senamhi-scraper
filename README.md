@@ -65,7 +65,6 @@ senamhi_scraper/
 ├── ⚙️ settings.py               # ✨ Configuración centralizada
 ├── 📋 requirements.txt          # 📦 Dependencias del proyecto
 ├── 📖 README.md                # 📚 Documentación completa
-├── 📄 STRUCTURE_ANALYSIS.md     # 🔍 Análisis de arquitectura
 │
 ├── 📁 src/                      # 🏗️ Código fuente modular
 │   ├── 🚨 exceptions.py        # Excepciones personalizadas
@@ -107,13 +106,15 @@ cd senamhi-scraper
 ### 2. Crea un entorno virtual
 ```bash
 python -m venv .venv
-
-# 3. Ingresar en el entorno virtual
-source .venv/bin/activate     # En Linux/macOS
-.venv\Scripts\activate        # En Windows
 ```
 
-### 3. Instalar librerías desde requirements.txt (Recomendado)
+### 3. Ingresar en el entorno virtual
+```bash
+.venv\Scripts\activate        # En Windows
+source .venv/bin/activate     # En Linux/macOS
+```
+
+### 4. Instalar librerías desde requirements.txt (Recomendado)
 ```bash
 pip install -r requirements.txt
 ```
@@ -195,14 +196,14 @@ Modo: 1 (Month) | Año: 2024 | Mes: 09
 Cada archivo contiene los datos del mes correspondiente:
 - **Formato**: CSV con separador `;`
 - **Encoding**: UTF-8
-- **Nomenclatura**: `CODIGO_ESTACION-YYYYMM.csv`
+- **Nomenclatura**: `NOMBRE_ESTACION-YYYYMM.csv`
 - **Ejemplo**: `TICAPAMPA-202409.csv`
 
 ### 📦 Archivos Consolidados
 Consolida toda la información en un solo archivo:
 - **Formato**: CSV con separador `;`
 - **Encoding**: UTF-8 
-- **Nomenclatura**: `CODIGO_ESTACION-YYYY.csv` o `CODIGO_ESTACION-YYYY-YYYY.csv`
+- **Nomenclatura**: `NOMBRE_ESTACION-YYYY.csv` o `CODIGO_ESTACION-YYYY-YYYY.csv`
 - **Contenido**: Datos ordenados cronológicamente
 
 
@@ -314,7 +315,7 @@ CSV_ENCODING = "utf-8"   # Encoding de archivos
   - Asegúrate de tener conexión a internet para instalar dependencias y navegadores.
   - Si usas otro shell (como CMD), la activación se realiza con `.venv\Scripts\activate.bat`.
   - Si tienes problemas con permisos, ejecuta la terminal como administrador.
-  - Revisa que tu versión de Python sea 3.8 o superior (`python --version`).
+  - Revisa que tu versión de Python sea 3.11 o superior (`python --version`).
 
 
 ## 📄 Licencia
@@ -331,22 +332,9 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software...
 ```
 
-## 🌟 Reconocimientos
-
-**⭐ ¿Te resultó útil? ¡Dale una estrella al repo!**
-
-- 🙏 **SENAMHI Perú** - Por proporcionar datos meteorológicos públicos
-- 🚀 **Zendriver** - Por la tecnología de bypass de Cloudflare
-- 💡 **Pydantic** - Por la validación robusta de datos
-- 🐍 **Python Community** - Por las increíbles herramientas disponibles
-
----
+##
 
 <div align="center">
-<h3>🌦️ SENAMHI Data Scraper</h3>
-<p><strong>Desarrollado con ❤️ para la comunidad meteorológica y científica peruana</strong></p>
-<p><em>📧 ¿Preguntas? ¿Sugerencias? ¡Abre un issue en GitHub!</em></p>
-<br/>
-<p>🌍 <strong>Facilitando el acceso a datos hidrometeorológicos históricos del SENAMHI</strong></p>
+Desarollado con 💜 para la comunidad meteorológica peruana. <br/>
+Facilitando el acceso a datos hidrometeorológicos históricos del SENAMHI
 </div>
-
