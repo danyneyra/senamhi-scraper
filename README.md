@@ -91,7 +91,7 @@ senamhi_scraper/
 ## 🚀 Instalación
 
 ### Requisitos
-- **Python 3.8+** (recomendado 3.11+)
+- **Python 3.11+** (recomendado 3.13+)
 - **zendriver** - Automatización web avanzada
 - **beautifulsoup4** - Parsing HTML
 - **pydantic** - Validación de datos y modelos tipados
