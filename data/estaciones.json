@@ -801,7 +801,7 @@
     },
     {
         "nom": "CHARCANI",
-        "cate": "HLG",
+        "cate": "HLM",
         "lat": -16.3109,
         "lon": -71.4949,
         "ico": "H",
@@ -827,16 +827,6 @@
         "ico": "M",
         "cod": "116022",
         "cod_old": "000849",
-        "estado": "DIFERIDO"
-    },
-    {
-        "nom": "YURA",
-        "cate": "PLU",
-        "lat": -16.30271,
-        "lon": -71.62395,
-        "ico": "M",
-        "cod": "214500",
-        "cod_old": "214500",
         "estado": "DIFERIDO"
     },
     {
@@ -2680,16 +2670,6 @@
         "estado": "DIFERIDO"
     },
     {
-        "nom": "BATAN",
-        "cate": "HLG",
-        "lat": -6.80359,
-        "lon": -79.28932,
-        "ico": "H",
-        "cod": "201001",
-        "cod_old": "201001",
-        "estado": "DIFERIDO"
-    },
-    {
         "nom": "INCAHUASI",
         "cate": "CP",
         "lat": -6.23389,
@@ -2747,16 +2727,6 @@
         "ico": "M",
         "cod": "105121",
         "cod_old": "105121",
-        "estado": "DIFERIDO"
-    },
-    {
-        "nom": "VON HUMBOLDT",
-        "cate": "CP",
-        "lat": -12.08212,
-        "lon": -76.93928,
-        "ico": "M",
-        "cod": "112038",
-        "cod_old": "000610",
         "estado": "DIFERIDO"
     },
     {
@@ -3030,15 +3000,6 @@
         "estado": "REAL"
     },
     {
-        "nom": "QUILLABAMBA",
-        "cate": "CP",
-        "lat": -12.85645,
-        "lon": -72.69174,
-        "ico": "M",
-        "cod": "112036",
-        "estado": "REAL"
-    },
-    {
         "nom": "PARURO",
         "cate": "CO",
         "lat": -13.76698,
@@ -3148,7 +3109,7 @@
     },
     {
         "nom": "ACOBAMBA",
-        "cate": "CO",
+        "cate": "MAP",
         "lat": -12.84361,
         "lon": -74.5616,
         "ico": "M",
@@ -4929,15 +4890,6 @@
         "estado": "REAL"
     },
     {
-        "nom": "SAUSAL DE CULUCAN",
-        "cate": "CO",
-        "lat": -4.75238,
-        "lon": -79.75792,
-        "ico": "M",
-        "cod": "104059",
-        "estado": "REAL"
-    },
-    {
         "nom": "ALTO DE POCLUS",
         "cate": "CP",
         "lat": -4.9169,
@@ -6324,12 +6276,21 @@
         "estado": "AUTOMATICA"
     },
     {
-        "nom": "SAN IGNACIO",
-        "cate": "EMA",
-        "lat": -5.14422,
-        "lon": -78.99989,
+        "nom": "SAN MARCOS",
+        "cate": "EAMA",
+        "lat": -7.32249,
+        "lon": -78.17269,
         "ico": "M",
-        "cod": "4726706A",
+        "cod": "4725E206",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "TONGOD",
+        "cate": "EHMA",
+        "lat": -6.74456,
+        "lon": -78.81392,
+        "ico": "H",
+        "cod": "47E207A4",
         "estado": "AUTOMATICA"
     },
     {
@@ -6522,6 +6483,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "PAUCARTAMBO",
+        "cate": "EHA",
+        "lat": -13.3177,
+        "lon": -71.59741,
+        "ico": "H",
+        "cod": "210007",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "ACJANACO ",
         "cate": "EMA",
         "lat": -13.19672,
@@ -6639,6 +6609,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "CHALLACA",
+        "cate": "EHMA",
+        "lat": -13.7898,
+        "lon": -75.417,
+        "ico": "H",
+        "cod": "47284198",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "CORDOVA",
         "cate": "EMA",
         "lat": -14.03333,
@@ -6702,6 +6681,24 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "QUISCA",
+        "cate": "EMA",
+        "lat": -10.08922,
+        "lon": -76.21556,
+        "ico": "M",
+        "cod": "110146",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "SAN MARTIN",
+        "cate": "EMA",
+        "lat": -9.40385,
+        "lon": -76.76482,
+        "ico": "M",
+        "cod": "4720EB14",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "CACHICOTO",
         "cate": "EMA",
         "lat": -9.21931,
@@ -6735,6 +6732,24 @@
         "lon": -75.9825,
         "ico": "H",
         "cod": "472D1624",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "PUERTO INCA",
+        "cate": "EAMA",
+        "lat": -9.3851,
+        "lon": -74.96376,
+        "ico": "M",
+        "cod": "4727A4F8",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "JESUS DE LAURICOCHA",
+        "cate": "EMA",
+        "lat": -10.07819,
+        "lon": -76.63119,
+        "ico": "M",
+        "cod": "110140",
         "estado": "AUTOMATICA"
     },
     {
@@ -6774,6 +6789,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "BETA SANTIAGO",
+        "cate": "EMA",
+        "lat": -14.23739,
+        "lon": -75.67022,
+        "ico": "M",
+        "cod": "472A446C",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "CONTA M",
         "cate": "EMA",
         "lat": -13.43936,
@@ -6807,6 +6831,15 @@
         "lon": -74.95588,
         "ico": "M",
         "cod": "47283708",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "PALPA",
+        "cate": "PE",
+        "lat": -14.54935,
+        "lon": -75.18921,
+        "ico": "M",
+        "cod": "114136",
         "estado": "AUTOMATICA"
     },
     {
@@ -6864,6 +6897,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "COROPUNA",
+        "cate": "EMA",
+        "lat": -15.53597,
+        "lon": -72.61056,
+        "ico": "M",
+        "cod": "115150",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "CUYAU",
         "cate": "EHA",
         "lat": -15.21794,
@@ -6909,6 +6951,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "CCONTACC",
+        "cate": "EMA",
+        "lat": -14.5423,
+        "lon": -74.2642,
+        "ico": "M",
+        "cod": "114122",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "PAMPA GALERAS",
         "cate": "EMA",
         "lat": -14.66917,
@@ -6927,12 +6978,21 @@
         "estado": "AUTOMATICA"
     },
     {
-        "nom": "CORA CORA",
-        "cate": "EMA",
-        "lat": -15.01139,
-        "lon": -73.77917,
+        "nom": "PAUZA",
+        "cate": "PE",
+        "lat": -15.275,
+        "lon": -73.34083,
         "ico": "M",
-        "cod": "47262016",
+        "cod": "115155",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "PAUCARAY",
+        "cate": "EAMA",
+        "lat": -14.04361,
+        "lon": -73.63833,
+        "ico": "M",
+        "cod": "4725B27A",
         "estado": "AUTOMATICA"
     },
     {
@@ -7098,12 +7158,30 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "BAGUA",
+        "cate": "EAMA",
+        "lat": -5.66145,
+        "lon": -78.53403,
+        "ico": "M",
+        "cod": "472C57D4",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "CORRAL QUEMADO",
         "cate": "EHA",
         "lat": -5.75461,
         "lon": -78.69208,
         "ico": "H",
         "cod": "472B607A",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "MAGUNCHAL",
+        "cate": "EHA",
+        "lat": -5.88987,
+        "lon": -78.18876,
+        "ico": "H",
+        "cod": "472B2370",
         "estado": "AUTOMATICA"
     },
     {
@@ -7140,6 +7218,15 @@
         "lon": -78.26172,
         "ico": "H",
         "cod": "211408",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "SAN JACINTO",
+        "cate": "EHA",
+        "lat": -9.141,
+        "lon": -78.2023,
+        "ico": "H",
+        "cod": "211601",
         "estado": "AUTOMATICA"
     },
     {
@@ -7206,6 +7293,24 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "LA PAMPILLA",
+        "cate": "EMA",
+        "lat": -16.41384,
+        "lon": -71.53452,
+        "ico": "M",
+        "cod": "116065",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "CAYMA",
+        "cate": "PLU",
+        "lat": -16.31689,
+        "lon": -71.57919,
+        "ico": "M",
+        "cod": "116083",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "CHARCANI",
         "cate": "EHA",
         "lat": -16.31086,
@@ -7225,7 +7330,7 @@
     },
     {
         "nom": "HUASACACHE",
-        "cate": "EMA",
+        "cate": "PE",
         "lat": -16.45774,
         "lon": -71.56635,
         "ico": "M",
@@ -7266,6 +7371,15 @@
         "lon": -71.32836,
         "ico": "M",
         "cod": "47E3B6D0",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "LAS SALINAS",
+        "cate": "PE",
+        "lat": -16.32064,
+        "lon": -71.15212,
+        "ico": "M",
+        "cod": "116086",
         "estado": "AUTOMATICA"
     },
     {
@@ -7315,7 +7429,7 @@
     },
     {
         "nom": "CAMANA",
-        "cate": "EMA",
+        "cate": "PE",
         "lat": -16.64395,
         "lon": -72.70432,
         "ico": "M",
@@ -7365,6 +7479,15 @@
         "lon": -77.08447,
         "ico": "M",
         "cod": "112265",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "SANTA ANITA",
+        "cate": "EMA",
+        "lat": -12.04302,
+        "lon": -76.97144,
+        "ico": "M",
+        "cod": "112208",
         "estado": "AUTOMATICA"
     },
     {
@@ -7548,15 +7671,6 @@
         "estado": "AUTOMATICA"
     },
     {
-        "nom": "RIO BLANCO",
-        "cate": "EHMA",
-        "lat": -11.73447,
-        "lon": -76.25961,
-        "ico": "H",
-        "cod": "212604",
-        "estado": "AUTOMATICA"
-    },
-    {
         "nom": "CASAPALCA",
         "cate": "EMA",
         "lat": -11.638,
@@ -7629,15 +7743,6 @@
         "estado": "AUTOMATICA"
     },
     {
-        "nom": "SANTA CLOTILDE",
-        "cate": "EMA",
-        "lat": -2.48757,
-        "lon": -73.67925,
-        "ico": "M",
-        "cod": "47271776",
-        "estado": "AUTOMATICA"
-    },
-    {
         "nom": "ENAPU PERU",
         "cate": "EHMA",
         "lat": -3.72722,
@@ -7662,6 +7767,51 @@
         "lon": -71.85962,
         "ico": "M",
         "cod": "47288486",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "CONTAMANA",
+        "cate": "EAMA",
+        "lat": -7.35254,
+        "lon": -75.00632,
+        "ico": "M",
+        "cod": "47287402",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "BILINGURSTH",
+        "cate": "EHMA",
+        "lat": -12.56083,
+        "lon": -69.18949,
+        "ico": "H",
+        "cod": "260700",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "CACHUELA",
+        "cate": "EHMA",
+        "lat": -12.60442,
+        "lon": -69.18304,
+        "ico": "H",
+        "cod": "260403",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "PUENTE HERRERA",
+        "cate": "EHMA",
+        "lat": -12.61361,
+        "lon": -69.19413,
+        "ico": "H",
+        "cod": "260402",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "TAMBOPATA",
+        "cate": "EHA",
+        "lat": -12.5925,
+        "lon": -69.17529,
+        "ico": "H",
+        "cod": "260002",
         "estado": "AUTOMATICA"
     },
     {
@@ -7737,12 +7887,21 @@
         "estado": "AUTOMATICA"
     },
     {
-        "nom": "SAN MIGUEL",
-        "cate": "PE",
-        "lat": -5.24619,
-        "lon": -80.68425,
+        "nom": "MIRAFLORES",
+        "cate": "EMA",
+        "lat": -5.17528,
+        "lon": -80.61654,
         "ico": "M",
-        "cod": "105143",
+        "cod": "105112",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "PARTIDOR",
+        "cate": "PE",
+        "lat": -4.73197,
+        "lon": -80.27978,
+        "ico": "M",
+        "cod": "104113",
         "estado": "AUTOMATICA"
     },
     {
@@ -7782,6 +7941,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "ALTO DE POCLUS",
+        "cate": "PE",
+        "lat": -4.91691,
+        "lon": -79.89052,
+        "ico": "M",
+        "cod": "104114",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "PAIMAS",
         "cate": "EMA",
         "lat": -4.63439,
@@ -7815,6 +7983,15 @@
         "lon": -79.96412,
         "ico": "H",
         "cod": "47E0C74E",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "HUANCABAMBA",
+        "cate": "EMA",
+        "lat": -5.24681,
+        "lon": -79.45399,
+        "ico": "M",
+        "cod": "472FE354",
         "estado": "AUTOMATICA"
     },
     {
@@ -7860,6 +8037,15 @@
         "lon": -79.89148,
         "ico": "H",
         "cod": "47E037CA",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "CHALACO",
+        "cate": "EMA",
+        "lat": -5.03389,
+        "lon": -79.83,
+        "ico": "M",
+        "cod": "472FB328",
         "estado": "AUTOMATICA"
     },
     {
@@ -7917,6 +8103,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "SANTO DOMINGO",
+        "cate": "PE",
+        "lat": -5.03827,
+        "lon": -79.87049,
+        "ico": "M",
+        "cod": "105145",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "PUENTE SIMON RODRIGUEZ",
         "cate": "EHA",
         "lat": -4.87999,
@@ -7950,6 +8145,24 @@
         "lon": -80.38819,
         "ico": "H",
         "cod": "47E09732",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "CHUSIS",
+        "cate": "EMA",
+        "lat": -5.51694,
+        "lon": -80.83361,
+        "ico": "M",
+        "cod": "105120",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "BERNAL",
+        "cate": "PE",
+        "lat": -5.45449,
+        "lon": -80.74262,
+        "ico": "M",
+        "cod": "105144",
         "estado": "AUTOMATICA"
     },
     {
@@ -8016,21 +8229,21 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "CRUCERO",
+        "cate": "PE",
+        "lat": -14.36416,
+        "lon": -70.02583,
+        "ico": "M",
+        "cod": "114137",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "DESAGUADERO",
         "cate": "EHA",
         "lat": -16.56364,
         "lon": -69.03667,
         "ico": "H",
         "cod": "270001",
-        "estado": "AUTOMATICA"
-    },
-    {
-        "nom": "ILAVE",
-        "cate": "EHMA",
-        "lat": -16.08825,
-        "lon": -69.62592,
-        "ico": "M",
-        "cod": "472E112A",
         "estado": "AUTOMATICA"
     },
     {
@@ -8049,6 +8262,24 @@
         "lon": -69.21467,
         "ico": "H",
         "cod": "210003",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "LAMPA",
+        "cate": "PE",
+        "lat": -15.36296,
+        "lon": -70.37343,
+        "ico": "M",
+        "cod": "115157",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "CABANILLAS",
+        "cate": "PE",
+        "lat": -15.63909,
+        "lon": -70.34661,
+        "ico": "M",
+        "cod": "115156",
         "estado": "AUTOMATICA"
     },
     {
@@ -8079,6 +8310,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "ANANSAYA -PUNA",
+        "cate": "EMA",
+        "lat": -14.33386,
+        "lon": -70.52334,
+        "ico": "M",
+        "cod": "114134",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "JULIACA",
         "cate": "EMA",
         "lat": -15.47106,
@@ -8088,12 +8328,39 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "JEPELACIO",
+        "cate": "PE",
+        "lat": -6.11275,
+        "lon": -76.90761,
+        "ico": "M",
+        "cod": "106144",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "BELLAVISTA",
+        "cate": "PE",
+        "lat": -7.05517,
+        "lon": -76.55836,
+        "ico": "M",
+        "cod": "107142",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "SHANAO",
         "cate": "EHA",
         "lat": -6.41291,
         "lon": -76.60001,
         "ico": "H",
         "cod": "210006",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "TINGO DE PONAZA",
+        "cate": "PE",
+        "lat": -6.93722,
+        "lon": -76.25267,
+        "ico": "M",
+        "cod": "106145",
         "estado": "AUTOMATICA"
     },
     {
@@ -8295,6 +8562,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "PUERTO PIZARRO",
+        "cate": "PE",
+        "lat": -3.50396,
+        "lon": -80.39538,
+        "ico": "M",
+        "cod": "103068",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "PUENTE TUMBES",
         "cate": "EHA",
         "lat": -3.5709,
@@ -8385,15 +8661,6 @@
         "estado": "AUTOMATICA"
     },
     {
-        "nom": "SANTA ANA",
-        "cate": "EMA",
-        "lat": -8.49763,
-        "lon": -75.56274,
-        "ico": "M",
-        "cod": "47E8568A",
-        "estado": "AUTOMATICA"
-    },
-    {
         "nom": "PUERTO ESPERANZA",
         "cate": "EMA",
         "lat": -9.77083,
@@ -8418,6 +8685,24 @@
         "lon": -75.06186,
         "ico": "M",
         "cod": "472DF5D6",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "SATIPO",
+        "cate": "EMA",
+        "lat": -11.2247,
+        "lon": -74.6087,
+        "ico": "M",
+        "cod": "4725C4EA",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "POTSOTENI",
+        "cate": "EMA",
+        "lat": -11.41316,
+        "lon": -74.14723,
+        "ico": "M",
+        "cod": "111299",
         "estado": "AUTOMATICA"
     },
     {
@@ -8574,12 +8859,30 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "TINAJONES",
+        "cate": "EMA",
+        "lat": -6.65489,
+        "lon": -79.42792,
+        "ico": "M",
+        "cod": "47E2F720",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "VISTA FLORIDA",
         "cate": "EMA",
         "lat": -6.72775,
         "lon": -79.78088,
         "ico": "M",
         "cod": "106140",
+        "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "PUCHACA",
+        "cate": "EHA",
+        "lat": -6.37353,
+        "lon": -79.46673,
+        "ico": "H",
+        "cod": "106138",
         "estado": "AUTOMATICA"
     },
     {
@@ -8646,15 +8949,6 @@
         "estado": "AUTOMATICA"
     },
     {
-        "nom": "PANTANOS DE VILLA",
-        "cate": "EMA",
-        "lat": -12.21142,
-        "lon": -76.98797,
-        "ico": "M",
-        "cod": "112277",
-        "estado": "AUTOMATICA"
-    },
-    {
         "nom": "CAMPO DE MARTE",
         "cate": "EMA",
         "lat": -12.07056,
@@ -8670,15 +8964,6 @@
         "lon": -76.93944,
         "ico": "M",
         "cod": "472AC278",
-        "estado": "AUTOMATICA"
-    },
-    {
-        "nom": "HUACHIPA",
-        "cate": "EHA",
-        "lat": -12.01283,
-        "lon": -76.89542,
-        "ico": "H",
-        "cod": "212607",
         "estado": "AUTOMATICA"
     },
     {
@@ -8700,6 +8985,15 @@
         "estado": "AUTOMATICA"
     },
     {
+        "nom": "PUENTE PIEDRA",
+        "cate": "EMA",
+        "lat": -11.86325,
+        "lon": -77.07413,
+        "ico": "M",
+        "cod": "111287",
+        "estado": "AUTOMATICA"
+    },
+    {
         "nom": "SAN BORJA",
         "cate": "EMA",
         "lat": -12.10859,
@@ -8715,15 +9009,6 @@
         "lon": -76.99925,
         "ico": "M",
         "cod": "112267",
-        "estado": "AUTOMATICA"
-    },
-    {
-        "nom": "SAN MARCOS",
-        "cate": "EAMA",
-        "lat": -7.32249,
-        "lon": -78.1727,
-        "ico": "M",
-        "cod": "4725E206",
         "estado": "AUTOMATICA"
     }
 ]
