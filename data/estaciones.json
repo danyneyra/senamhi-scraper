@@ -8716,5 +8716,14 @@
         "ico": "M",
         "cod": "112267",
         "estado": "AUTOMATICA"
+    },
+    {
+        "nom": "SAN MARCOS",
+        "cate": "EAMA",
+        "lat": -7.32249,
+        "lon": -78.1727,
+        "ico": "M",
+        "cod": "4725E206",
+        "estado": "AUTOMATICA"
     }
 ]
