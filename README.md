@@ -70,8 +70,7 @@ pipx install garua
 Verifica la instalación:
 
 ```bash
-garua --help
-garua --doctor
+garua --health
 ```
 
 La guía completa está en [Instalación](https://garua.danyneyra.dev/installation/).

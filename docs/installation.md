@@ -23,7 +23,17 @@ Garúa puede instalarse como herramienta CLI y como servidor MCP. La instalació
   compatible con Chromium para consultar SENAMHI y descargar datos.
 - Un cliente MCP si quieres usar Garúa desde un asistente de IA compatible.
 
+??? tip "Instalar Python en Windows"
+    Si vas a instalar Python desde [python.org], activa la casilla **Add python.exe to PATH**
+    en la primera pantalla del instalador antes de seleccionar **Install Now**. Así podrás
+    ejecutar `python`, `pip` y `garua` directamente desde la terminal.
+
+    ![Instalador de Python para Windows con la opción Add python.exe to PATH activada](images/python-installer.png)
+
+    Si necesitas una guía visual, sigue el video [Cómo instalar Python en Windows y añadirlo al PATH](https://youtu.be/BfiQ8feXCOI).
+
 [Python]: https://www.python.org/downloads/
+[python.org]: https://www.python.org/downloads/
 [Google Chrome]: https://www.google.com/intl/es_es/chrome/safety/
 
 ??? info "Navegador local basado en Chromium"
@@ -40,11 +50,19 @@ Garúa puede instalarse como herramienta CLI y como servidor MCP. La instalació
 
     Para más detalles, revisa [Variables de entorno](reference/environment.md#uso-comun){data-preview}.
 
-## Instalar desde PyPI
+## Instalar Garúa desde PyPI
 
 Garúa se publica en [PyPI](https://pypi.org/project/garua/). Puedes instalarlo con `pip` o con `pipx`.
 
 Usa `pip` si ya trabajas con entornos de Python o quieres instalar Garúa dentro de un proyecto. Usa `pipx` si quieres usar Garúa como herramienta de terminal, especialmente en Windows o cuando prefieres no ajustar manualmente el `PATH`.
+
+Si usas Windows y tienes poca experiencia con la terminal, puedes abrir **CMD**
+desde el menú Inicio: escribe `cmd` o **Símbolo del sistema** en el buscador y
+abre la aplicación **Símbolo del sistema**. Luego ejecuta allí el comando de
+instalación; no lo escribas en el navegador ni en el buscador de Windows.
+
+También puedes seguir el video [Instalación y uso de Garúa](https://www.youtube.com/watch?v=q5I_q8GrOZ0&t=418s),
+que muestra este proceso paso a paso.
 
 === ":simple-python: pip"
 
@@ -64,7 +82,7 @@ Usa `pip` si ya trabajas con entornos de Python o quieres instalar Garúa dentro
     python -m garua
     ```
 
-    ??? question "¿El comando `garua` no aparece en la terminal?"
+    ??? question "¿El comando `garua` no aparece en la terminal en Windows?"
 
         En Windows, esto suele ocurrir cuando la carpeta `Scripts` de Python no está agregada al `PATH`.
 
@@ -75,18 +93,22 @@ Usa `pip` si ya trabajas con entornos de Python o quieres instalar Garúa dentro
         ```
 
         Luego agrega la subcarpeta `Scripts` al `PATH`. Por ejemplo, si el comando anterior devuelve:
-
+        
         ```text
-        C:\Users\Usuario\AppData\Roaming\Python
+        C:\Users\TuUsuario\AppData\Roaming\Python
         ```
 
-        debes agregar esta ruta:
+        * Nota: `TuUsuario` es tu nombre de usuario en Windows
+
+        La ruta completa que debes agregar sería:
 
         ```text
-        C:\Users\Usuario\AppData\Roaming\Python\Scripts
+        C:\Users\TuUsuario\AppData\Roaming\Python\Scripts
         ```
 
         Después de actualizar el `PATH`, cierra y vuelve a abrir la terminal.
+
+        Para ver el procedimiento completo, sigue el video [Cómo añadir la carpeta Scripts de Python al PATH en Windows](https://youtu.be/IXkccLZaHmA).
 
 === ":simple-pipx: pipx"
 
@@ -111,11 +133,11 @@ Verifica que los comandos estén disponibles:
 
 ```bash
 garua --help
-garua --doctor
+garua --health
 garua-mcp
 ```
 
-`garua --doctor` revisa los requisitos básicos: versión de Python, sistema
+`garua --health` revisa los requisitos básicos: versión de Python, sistema
 operativo, directorios de salida y navegador disponible. También puedes usar el
 alias `garua --health`.
 
@@ -148,7 +170,7 @@ Después de actualizar, valida la versión y el entorno:
 
 ```bash
 garua --version
-garua --doctor
+garua --health
 ```
 
 Si usas Garúa como servidor MCP, reinicia el cliente donde lo tengas configurado
