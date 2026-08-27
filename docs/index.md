@@ -30,7 +30,7 @@ title: "Documentación"
 
 Garúa es una herramienta de código abierto para trabajar con estaciones meteorológicas e hidrológicas del [SENAMHI]. Permite buscar estaciones, descargar datos históricos en CSV, revisar archivos locales, resumir periodos, comparar meses o años, validar calidad de datos y recomendar estaciones cercanas a un punto geográfico.
 
-## Video de introducción
+## Video de instalación, configuración y uso
 
 <div class="garua-video" markdown="1">
   <iframe src="https://www.youtube.com/embed/q5I_q8GrOZ0" title="Garúa: CLI y servidor MCP para datos del SENAMHI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -90,6 +90,15 @@ Garúa es una herramienta de código abierto para trabajar con estaciones meteor
 ??? info "Requisitos: Python 3.11+"
     Antes de instalar Garúa, asegúrate de tener Python disponible en tu sistema. Se recomienda usar una versión reciente de [Python] y revisar la guía oficial [Python Setup and Usage] si necesitas ayuda con la instalación.
 
+    Si instalas Python en Windows, marca **Add python.exe to PATH** en la primera pantalla del instalador antes de hacer clic en **Install Now**. Esta opción permite usar `python` y `pip` desde la terminal.
+
+    ![Instalador de Python para Windows con la opción Add python.exe to PATH activada](images/python-installer.png)
+
+    Si necesitas una guía visual, puedes elegir el video que corresponda a tu caso:
+
+    - [Instalar Python y añadirlo al PATH](https://youtu.be/BfiQ8feXCOI)
+    - [Añadir la carpeta Scripts al PATH si Python ya está instalado](https://youtu.be/IXkccLZaHmA)
+
 [Python Setup and Usage]: https://docs.python.org/3/using
 [Python]: https://www.python.org/downloads/
 
@@ -118,7 +127,7 @@ Con Python instalado, ejecuta este comando desde tu :material-console: terminal 
   <button class="garua-terminal__replay" type="button" data-terminal-replay aria-label="Reiniciar animación">reiniciar ↻</button>
 </div>
 
-Ver la guía completa de [Instalación](installation.md#instalar-desde-pypi){data-preview}.
+Ver la guía completa de [Instalación](installation.md#instalar-garua-desde-pypi){data-preview}.
 
 ## Uso rápido
 
@@ -229,4 +238,3 @@ Compara marzo 2025 vs marzo 2026 para Cabana
 ## Licencia
 
 Este proyecto se publica bajo los términos de la licencia MIT.
-

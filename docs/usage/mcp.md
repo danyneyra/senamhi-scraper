@@ -34,7 +34,7 @@ garua-mcp
 }
 ```
 
-Si el cliente no encuentra el comando, usa la ruta absoluta al ejecutable o al Python del entorno virtual. Puedes revisar [Instalar y Configurar](../installation.md#instalar-desde-pypi){data-preview}
+Si el cliente no encuentra el comando, usa la ruta absoluta al ejecutable o al Python del entorno virtual. Puedes revisar [Instalar y Configurar](../installation.md#instalar-garua-desde-pypi){data-preview}
 
 
 !!! info "Nota sobre descargas"
