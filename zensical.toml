@@ -1,7 +1,7 @@
 [project]
 site_name = "Garúa - Descarga, analiza y valida datos de SENAMHI con IA"
 site_url = "https://garua.danyneyra.dev"
-site_description = "Documentación de Garúa: CLI y servidor MCP para trabajar con datos hidrometeorológicos oficiales del SENAMHI Perú."
+site_description = "Garúa es un CLI y servidor MCP para trabajar con datos hidrometeorológicos oficiales del SENAMHI Perú. Descarga, analiza y valida datos de SENAMHI con IA."
 site_author = "Dany Daniel"
 copyright = "Dany Daniel :)"
 docs_dir = "docs"
